@@ -7,16 +7,7 @@ from aiogram.types import Message, FSInputFile, ContentType, BotCommand
 from pathlib import Path
 from model.model import predict_class
 
-from aiogram.fsm.context import FSMContext
-from aiogram.fsm.state import StatesGroup, State
-
-BASE_DIR = Path(__file__).resolve().parent
-
 load_dotenv(find_dotenv())
-
-# FSM для отслеживания состояния пользователя
-class SendPhoto(StatesGroup):
-    waiting_for_photo = State()
 
 token = getenv('TOKEN')
 bot = Bot(token=token)
